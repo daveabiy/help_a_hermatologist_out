@@ -43,5 +43,6 @@ To make actual use of deep learning in the medical routine, it is important that
 The formula can be see in [click here for the code](https://github.com/scikit-learn/scikit-learn/blob/36958fb24/sklearn/metrics/_classification.py#L1001) and is given as
 
 > <g> F1 = 2 * (precision * recall) / (precision + recall) </g>
-![precision and recall](figures/f1_score.PNG)
+
+<img src="figures/f1_score.PNG" width="384" height="681">
 ***
