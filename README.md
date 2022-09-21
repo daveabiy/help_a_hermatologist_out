@@ -45,4 +45,5 @@ The formula can be see in [click here for the code](https://github.com/scikit-le
 > <g> F1 = 2 * (precision * recall) / (precision + recall) </g>
 
 <img src="figures/f1_score.PNG" width="384" height="681">
+
 ***
