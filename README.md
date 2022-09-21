@@ -51,18 +51,4 @@ The formula can be see in [click here for the code](https://github.com/scikit-le
 ***
  Uncomment the code below to download the dataset. Makesure you adjust the path according to where you download it
  
- '''
- # !wget --user YraZEdrHytaCSza --password BgZL3j8DT4 https://hmgubox2.helmholtz-muenchen.de/public.php/webdav/Acevedo_20.zip -O Acevedo_20.zip #(230M) [application/zip]
-# !wget --user YraZEdrHytaCSza --password BgZL3j8DT4 https://hmgubox2.helmholtz-muenchen.de/public.php/webdav/Matek_19.zip -O Matek_19.zip #(5.7G) [application/zip]
-# !wget --user YraZEdrHytaCSza --password BgZL3j8DT4 https://hmgubox2.helmholtz-muenchen.de/public.php/webdav/WBC1.zip -O WBC1.zip #(357M) [application/zip]
-# !wget --user YraZEdrHytaCSza --password BgZL3j8DT4 https://hmgubox2.helmholtz-muenchen.de/public.php/webdav/val_dummy.csv -O val_dummy.csv #44834 (44K) [text/csv]
-# !wget --user YraZEdrHytaCSza --password BgZL3j8DT4 https://hmgubox2.helmholtz-muenchen.de/public.php/webdav/metadata2.csv -O metadata2.csv #2019059 (1.9M) [text/csv]
-# print('download complete') 
-
-# import shutil
-
-# shutil.unpack_archive('Acevedo_20.zip', 'Datasets/Acevedo_20')
-# shutil.unpack_archive('Matek_19.zip', 'Datasets/Matek_19')
-# shutil.unpack_archive('WBC1.zip', 'Datasets/WBC1')
-# !ls
-'''
+ 
