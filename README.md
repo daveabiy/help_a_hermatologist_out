@@ -56,11 +56,21 @@ The formula can be see in [click here for the code](https://github.com/scikit-le
 <img src="figures/f1_score.PNG" width="384" height="681">
 
 ***
-## Donwloading the data
+> ### Donwloading the data
+ code is given in the jupyter notebook. Makesure you adjust the path according to where you download it
 ***
- Uncomment the code below to download the dataset. Makesure you adjust the path according to where you download it
- 
- 
+> ### Specify the data path and the labels 
+Data augementation has been made and is saved in the path. 
+Labels are automatically taken from the folder names of withn the dataset
+different datasets have different concentration of the labels
+***
+> ### create a pandas metadata
+Use the functions given in the libraries folder
+***
+> ### update the pandas file with different statistical qualities of the images 
+For data visualization, it is helpful to do different statistical measurements, incluidng min, max, std, mean. They are then included with the metadata
+***
+
 ###  Authors
 
 > Armin Gruber
