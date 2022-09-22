@@ -76,10 +76,22 @@ def compute_mean(dataframe=metadata, savepath=savepath, selected_channels=[0,1,2
         # dataframe.to_csv(savepath)  
     return dataframe
 
-def make_stat(metadata = metadata, savepath = savepath):
+import rasterio as rio
+def make_stat(metadata = metadata, savepath = 'metadata3.csv'):
+    """
+    This function computes the mean and std of the images in the dataframe
+    the mean and std are computed for each channel and stored in the dataframe
+    the dataframe is saved in the savepath (advisable)
+    """
+
     for idx in tqdm.tqdm(range(len(metadata))):
         added = metadata.values[idx]
-        image = io.imread(metadata.values[:,1].tolist()[idx])
+        try:
+            image = io.imread(added[1]) 
+        except:  
+            src = rio.open(added[1])
+            image = src.read()
+
         for ch in range(3):
             added[5+ch] = np.mean(image[:,:,ch])
             added[8+ch] = np.std(image[:,:,ch])
@@ -227,10 +239,6 @@ def crop(image, crop_size):
 only for parallelization with ray
 """
 """
-import ray
-if not ray.is_initialized():
-    ray.init()
-
 import ray 
 if not ray.is_initialized():
     ray.init()
@@ -245,4 +253,8 @@ def make_stat(metadata = metadata, idx = 0):
         added[11+ch] = np.max(image[:,:,ch])
         added[14+ch] = np.min(image[:,:,ch])
     return added
+meta_ray = ray.put(metadata)
+x =ray.get([make_stat.remote(ray.get(meta_ray), id) for id in tqdm.tqdm(range(len(metadata)))])
+metadata.values[0:len(metadata)] = x[0:len(metadata)]
+metadata.to_csv('metadata3.csv', index=False)
 """

@@ -1,12 +1,52 @@
-from typing_extensions import Self
-import torch
-from imageio import imread
-import copy
 import numpy as np
+from imageio import imread
+import pandas as pd
 import matplotlib.pyplot as plt
-import data_processing as dp
+import matplotlib.image as mpimg
+import copy 
 
+import sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, plot_confusion_matrix, matthews_corrcoef, classification_report,confusion_matrix, accuracy_score, balanced_accuracy_score, cohen_kappa_score, f1_score,  precision_score, recall_score
+from skimage import io as io
+from skimage.util import *
+
+import torch
+import torch.nn as nn
+import torch.optim
+from torch.utils.data import DataLoader
+from torch.utils.data import Dataset, DataLoader
+import torchvision
+from torchvision import transforms
+import torchvision.models as models
 dataset_image_size = {}
+
+resize=224 #image pixel size
+number_workers=3
+
+random_crop_scale=(0.8, 1.0)
+random_crop_ratio=(0.8, 1.2)
+
+mean=[0.485, 0.456, 0.406] #values from imagenet
+std=[0.229, 0.224, 0.225] #values from imagenet
+
+bs=32 #batchsize
+normalization = torchvision.transforms.Normalize(mean,std)
+
+train_transform = transforms.Compose([ 
+        normalization,
+        transforms.RandomResizedCrop(resize, scale=random_crop_scale, ratio=random_crop_ratio),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomVerticalFlip()
+])
+
+val_transform = transforms.Compose([ 
+        normalization,
+        transforms.Resize(resize)])
+
+test_transform = transforms.Compose([ 
+        normalization,
+        transforms.Resize(resize)])
 
 class DatasetGenerator:
 
@@ -33,8 +73,8 @@ class DatasetGenerator:
 
         ## get image and label
         dataset =  self.metadata.loc[idx,"dataset"]
-        crop_size = dataset_image_size[dataset]
-        
+        # crop_size = dataset_image_size[dataset]
+        crop_size = 224
         h5_file_path = self.metadata.loc[idx,"file"]
         image= imread(h5_file_path)[:,:,self.selected_channels]
         image = image / 255.
