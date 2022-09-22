@@ -1,6 +1,15 @@
-# help_a_hermatologist_out
-help_a_hermatologist_out challenge by the Helmholtz incubator program
-![logo](https://github.com/christinab12/Data-challenge-logo/blob/main/logo.jpg?raw=true)
+# Data Challenge: [Help a Hematologist out!](https://helmholtz-data-challenges.de/web/challenges/challenge-page/93/overview) 
+*** 
+<b> Group: </b> 
+> #      $ BLAMAD $  
+<b> members </b> 
+> Bashir K., 
+> Lea G., 
+> Ankita N., 
+> Martin B., 
+> Arnab M., 
+> Dawit H. 
+***
 
 ## Getting started
 
@@ -52,3 +61,12 @@ The formula can be see in [click here for the code](https://github.com/scikit-le
  Uncomment the code below to download the dataset. Makesure you adjust the path according to where you download it
  
  
+###  Authors
+
+> Armin Gruber
+
+> Ali Boushehri
+
+> Christina Bukas
+
+> Dawit Hailu
