@@ -1,7 +1,7 @@
 # Data Challenge: [Help a Hematologist out!](https://helmholtz-data-challenges.de/web/challenges/challenge-page/93/overview) 
 *** 
 <b> Group: </b> 
-> #      $ BLAMAD $  
+> #      BLAMAD  
 <b> members </b> 
 > Bashir K., 
 > Lea G., 
